@@ -126,7 +126,9 @@ h6 {
       .header__nav {
         display: none; } }
   .header__action {
+    margin-left: 5px;
     position: relative;
+    letter-spacing: 2px;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s; }
     .header__action::before {
@@ -273,6 +275,11 @@ h6 {
   color: #fff; }
 
 @media (max-width: 1599px) {
+  .slider {
+    height: 600px;
+    width: 630px; } }
+
+@media (max-width: 960px) {
   .slider {
     height: 500px;
     width: 520px; } }
@@ -644,6 +651,7 @@ h6 {
     margin-bottom: 30px; }
 
 .person {
+  position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 314px;
@@ -653,28 +661,34 @@ h6 {
           box-shadow: 0 9px 18px rgba(37, 41, 49, 0.03);
   border-radius: 16px;
   text-align: center;
-  z-index: -2; }
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s; }
+  .person:hover {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px); }
+  .person::before, .person::after {
+    content: "";
+    position: absolute;
+    width: 139px;
+    height: 56px;
+    background: #2060f6;
+    border-radius: 12px;
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg); }
+  .person::before {
+    top: 18%;
+    left: 7%; }
+  .person::after {
+    bottom: 55%;
+    right: 7%; }
   .person__photo {
     position: relative;
     width: 140px;
     height: 140px;
-    margin: 0 auto 111px; }
-    .person__photo::before, .person__photo::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: 139px;
-      height: 56px;
-      background: #2060f6;
-      border-radius: 12px;
-      -webkit-transform: rotate(-60deg);
-              transform: rotate(-60deg); }
-    .person__photo::before {
-      top: 0;
-      left: -35%; }
-    .person__photo::after {
-      bottom: 0;
-      right: -35%; }
+    margin: 0 auto 111px;
+    z-index: 1; }
   .person__img {
     width: 100%;
     height: 100%;
